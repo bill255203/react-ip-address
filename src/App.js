@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [name, setName] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1 className='title'>IP address tracker</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Enter IP:
+          <input
+            type='text'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <input type='submit' value='submit' />
+      </form>
+      <div className='information'>
+        <div className='info'></div>
+        <div className='info'></div>
+        <div className='info'></div>
+        <div className='info'></div>
+      </div>
     </div>
   );
 }
