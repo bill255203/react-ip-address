@@ -22,6 +22,20 @@ body {
   text-align: center;
 }
 
+form input[type=text] {
+  width: 20em;
+  height: 3em;
+  border-radius: 5px;
+}
+form input[type=submit] {
+  background-color: blue;
+  color: #fff;
+  font-weight: bold;
+  width: 3em;
+  height: 3em;
+  border-radius: 5px;
+}
+
 .information {
   display: flex;
   width: 800px;
@@ -29,12 +43,17 @@ body {
   margin-inline: auto;
   margin-block: 2em;
 }
-.information form {
-  width: 20em;
-}
 .information .info {
   flex: 1;
+  padding: 20px;
   background-color: #fff;
   border: 2px solid black;
   border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.information .info .title {
+  font-weight: bold;
 }
